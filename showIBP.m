@@ -1,9 +1,10 @@
 clear themat tempmat 
-cust = 30;
 
-n = 10;
-d = [1,10];
-o=[.2,.5,.9];
+%Set Params
+cust = 30; %Customers
+n = 10; %eta, first customer tries Poisson(n) dishes
+d = [1,10]; %delta
+o=[.2,.5,.9]; %sigma controls power law behavior
 
 for i = 1:cust
     if i == 1
@@ -28,6 +29,8 @@ for i = 1:cust
 end
 
 
+
+%%Plot the Matrix with a grey colormap
 [r, c] = size(themat);                          % Get the matrix size
 imagesc((1:c)+0.5, (1:r)+0.5, themat);          % Plot the image
 colormap(gray);                              % Use a gray colormap
